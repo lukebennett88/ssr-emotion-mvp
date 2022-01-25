@@ -1,8 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/global.css";
+import type { AppProps } from "next/app";
+import { EmotionCacheProvider } from "../emotion-cache-provider";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <EmotionCacheProvider>
+      <Component {...pageProps} />
+    </EmotionCacheProvider>
+  );
 }
 
-export default MyApp
+export default App;
